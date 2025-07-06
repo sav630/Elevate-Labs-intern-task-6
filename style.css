@@ -1,0 +1,131 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Gradient Animated Background */
+.background-animation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, #ff6ec4, #7873f5, #6cf0e0);
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
+  z-index: -2;
+}
+
+/* SAV Badge Moving */
+.moving-badge {
+  position: absolute;
+  top: 10%;
+  font-size: 4rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.1);
+  animation: moveBadge 12s linear infinite;
+  white-space: nowrap;
+}
+
+/* Form Container Styling */
+.form-container {
+  width: 400px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  margin: 60px auto;
+  z-index: 1;
+  position: relative;
+}
+
+/* Animation for form fade-in */
+.animated {
+  animation: fadeInUp 1.2s ease-out;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+label {
+  margin-top: 10px;
+  display: block;
+  color: #444;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+button {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+}
+
+.success {
+  color: green;
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes moveBadge {
+  0% { left: -30%; }
+  100% { left: 130%; }
+}
+
